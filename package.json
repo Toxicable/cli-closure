@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build:ugly": "ng build --prod --build-optimizer && ls dist -l | grep main",
-    "build:closure": "ng build --prod --output-hashing=false --build-optimizer && sh build.sh && ls dist -l | grep closure.js"
+    "build:closure": "ng build --prod --output-hashing=false --build-optimizer && sh build-closure.sh && ls dist -l | grep closure.js"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +18,7 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "core-js": "^2.4.1",
+    "google-closure-compiler": "^20170910.0.0",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
