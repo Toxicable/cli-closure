@@ -1,0 +1,13 @@
+java -jar closure-compiler-v20170806.jar \
+--js=dist/main.bundle.js \
+--externs=externs.js \
+--compilation_level ADVANCED_OPTIMIZATIONS \
+--language_out=ES5 \
+--js_output_file=dist/bundle.closure.js \
+--output_manifest=dist/manifest.MF \
+--variable_renaming_report=dist/variable_renaming_report \
+--property_renaming_report=dist/property_renaming_report \
+--create_source_map=%outname%.map \
+--warning_level=QUIET \
+--rewrite_polyfills=false \
+--module_resolution=NODE
