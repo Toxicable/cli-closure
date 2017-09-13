@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build:ugly": "ng build --prod --build-optimizer && ls dist -l | grep main",
-    "build:closure": "ng build --aot --build-optimizer && sh build.sh && ls dist -l | grep closure.js"
+    "build:closure": "ng build --aot --env=prod --build-optimizer && sh build.sh && ls dist -l | grep closure.js"
   },
   "private": true,
   "dependencies": {
