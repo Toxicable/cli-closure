@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "closure": "java -jar node_modules/google-closure-compiler/compiler.jar --flagfile closure.conf --debug --formatting PRETTY_PRINT",
     "build:ugly": "ng build --prod --build-optimizer && ls dist -l | grep main",
-    "build:closure": "ng build --prod --output-hashing=false --build-optimizer && sh build-closure.sh && ls dist -l | grep closure.js"
+    "build:closure": "ng build --prod --output-hashing=false --build-optimizer && java -jar node_modules/google-closure-compiler/compiler.jar --flagfile closure.conf && ls dist -l | grep closure",
+    "build:closure:debug": "ng build --aot --build-optimizer && java -jar node_modules/google-closure-compiler/compiler.jar --flagfile closure.conf --debug --formatting PRETTY_PRINT",
+    "serve": "http-server dist"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +29,7 @@
     "@angular/cli": "1.4.1",
     "@angular/compiler-cli": "^4.2.4",
     "@angular/language-service": "^4.2.4",
+    "http-server": "^0.10.0",
     "typescript": "~2.3.3"
   }
 }
